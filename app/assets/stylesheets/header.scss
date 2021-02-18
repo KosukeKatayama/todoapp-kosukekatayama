@@ -1,0 +1,33 @@
+@import 'variables';
+
+$avatar-size: 40px;
+$header-padding-y: 16px;
+$back-icon-size: 16px;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: $header-padding-y 16px;
+
+  &_pageTitle {
+    font-size: 18px;
+  }
+  
+  &_avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
+  }
+}
+
+hr {
+    position: absolute;
+    width: 1920px;
+    height: 1px;
+    left: 0px;
+    top: 58px;
+
+    background: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.2;
+}
