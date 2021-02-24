@@ -7,16 +7,29 @@ $back-icon-size: 16px;
 .header {
   display: flex;
   justify-content: space-between;
-  padding: $header-padding-y 16px;
+
+  &_loginBtn {
+    background-color: #F4F4F4;
+    height: $avatar-size;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 16px;
+    color: black;
+    margin: ($avatar-size - $back-icon-size) / 2 8px 0;
+  }
 
   &_pageTitle {
     font-size: 18px;
+    padding: $header-padding-y 16px;
   }
   
   &_avatar {
     width: $avatar-size;
     height: $avatar-size;
     border-radius: 100%;
+    margin: ($avatar-size - $back-icon-size) / 2 8px 0;
+    cursor: pointer;
   }
 }
 
