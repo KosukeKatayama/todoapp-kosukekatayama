@@ -11,8 +11,16 @@
   %body
     %header.header
       %p.header_pageTitle= link_to 'Boards', root_path
-      = image_tag 'Oval.png', class: 'header_logos', class: 'header_avatar'
-    %hr
-    %p.notice= notice
-    %p.alert= alert
+      - if user_signed_in?
+        .dropdown  
+          = image_tag 'Oval.png', class: 'header_logos', class: 'header_avatar'
+          .dropdown-content.mini
+            = link_to 'Sign out', destroy_user_session_path, data: { method: 'delete' }
+      - else
+        = link_to 'Sign in', new_user_session_path, class: 'header_loginBtn'
+      %hr
+    - if flash.present?
+      .flash
+        - flash.each do |key, value|
+          %div{:class => key}= value
     = yield
