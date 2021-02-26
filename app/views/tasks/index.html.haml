@@ -1,6 +1,7 @@
 .container
   %h2= @board.title
 
-  .new
-    .new_title
-      + Add new card
+  = link_to new_board_task_path do
+    .new
+      .new_title
+        + Add new card
