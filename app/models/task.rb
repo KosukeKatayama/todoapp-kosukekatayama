@@ -15,6 +15,11 @@
 #  index_tasks_on_user_id  (user_id)
 #
 class Task < ApplicationRecord
-    belongs_to :board
+
+    validates :title, presence: true
+    validates :content, presence: true
+    # validates :limit_date, presence: true
+
+    # belongs_to :board
     belongs_to :user
 end
