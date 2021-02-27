@@ -16,10 +16,11 @@
 #
 class Task < ApplicationRecord
 
+    has_one_attached :eyecatch
+
     validates :title, presence: true
     validates :content, presence: true
-    # validates :limit_date, presence: true
+    validates :limit_date, presence: true
 
-    belongs_to :board
     belongs_to :user
 end
