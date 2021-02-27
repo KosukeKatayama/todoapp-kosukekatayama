@@ -20,6 +20,6 @@ class Task < ApplicationRecord
     validates :content, presence: true
     # validates :limit_date, presence: true
 
-    # belongs_to :board
+    belongs_to :board
     belongs_to :user
 end
