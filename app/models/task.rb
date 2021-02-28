@@ -15,6 +15,12 @@
 #  index_tasks_on_user_id  (user_id)
 #
 class Task < ApplicationRecord
-    belongs_to :board
+
+    has_one_attached :eyecatch
+
+    validates :title, presence: true
+    validates :content, presence: true
+    validates :limit_date, presence: true
+
     belongs_to :user
 end

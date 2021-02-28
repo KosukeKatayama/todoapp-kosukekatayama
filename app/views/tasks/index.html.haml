@@ -1,6 +1,31 @@
 .container
   %h2= @board.title
 
-  .new
-    .new_title
-      + Add new card
+  - @tasks.each do |task|
+    .card
+      - if task.eyecatch.attached?
+        .card_image
+          = image_tag task.eyecatch
+      .card_section
+        .card_section_title
+          = task.title       
+      .card_content  
+        = task.content
+      .card_detail
+        = image_tag 'Oval (1).png'
+
+  = link_to new_board_task_path do
+    .new
+      .new_title
+        + Add new card
+
+
+        -#  && current_user.has_written?(board)
+
+        -# , edit_board_path(board)
+
+        -# , board_path(board), data: { method: 'delete' , confirm: '本当に削除してもよろしいですか？'}
+
+        -# - if task.eyecatch.attached?
+        -# .card_image
+        -#     = image_tag task.eyecatch
