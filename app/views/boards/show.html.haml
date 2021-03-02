@@ -2,17 +2,18 @@
   %h2= @board.title
 
   - @tasks.each do |task|
-    .card
-      - if task.eyecatch.attached?
-        .card_image
-          = image_tag task.eyecatch
-      .card_section
-        .card_section_title
-          = task.title       
-      .card_content  
-        = task.content
-      .card_detail
-        = image_tag 'Oval (1).png'
+    = link_to board_task_path(@board, task) do
+      .card
+        - if task.eyecatch.attached?
+          .card_image
+            = image_tag task.eyecatch
+        .card_section
+          .card_section_title
+            = task.title       
+        .card_content  
+          = task.content
+        .card_detail
+          = image_tag 'Oval (1).png'
 
   = link_to new_board_task_path(@board) do
     .new

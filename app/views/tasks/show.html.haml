@@ -1,0 +1,23 @@
+.container
+
+  .card_section
+    %h2= @task.title
+  
+    - if user_signed_in?
+      .dropdown
+        = image_tag 'Combined Shape.png', class: 'dropbtn'
+        .dropdown-content.mini
+          = link_to 'Edit'
+          = link_to 'Delete'
+
+  - if @task.eyecatch.attached?
+    .card_image
+      = image_tag @task.eyecatch
+  .card
+    = @task.content
+  %h2
+    .comment_title
+      Comment
+  .new-comment
+    .new-comment_title
+      + Add new comment

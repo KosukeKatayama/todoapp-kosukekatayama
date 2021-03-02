@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
 
     def show
-        @tasks = Task.all
         @board = Board.find(params[:board_id])
+        @task = Task.find(params[:id])
     end
 
     def new
