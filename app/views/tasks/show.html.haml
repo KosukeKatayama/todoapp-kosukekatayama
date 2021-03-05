@@ -15,9 +15,18 @@
       = image_tag @task.eyecatch
   .card
     = @task.content
+  
   %h2
     .comment_title
       Comment
-  .new-comment
-    .new-comment_title
-      + Add new comment
+
+  - @comments.each do |comment|
+    .comment_avatar
+      = image_tag 'Oval.png', class: 'header_avatar'
+      .comment_text
+        %p= comment.content
+  
+  = link_to new_board_task_comment_path(@board, @task) do
+    .new-comment
+      .new-comment_title
+        + Add new comment
