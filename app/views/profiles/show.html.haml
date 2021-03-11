@@ -1,0 +1,15 @@
+.container
+  %h2 Profile
+  .profile_edit_button
+    = link_to 'Edit', edit_profile_path
+  
+  .profile
+    = image_tag current_user.avatar_image, class: 'header_logos', class: 'header_avatar'
+    .profile_display_name
+      = current_user.display_name
+    .profile_birthday
+      = current_user.profile&.birthday
+  %br
+    .profile_introdaction
+      = current_user.profile&.introdaction
+  

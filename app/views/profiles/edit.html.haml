@@ -1,0 +1,24 @@
+.container
+  %ul
+  - @profile.errors.full_messages.each do |message|
+    %li= message   
+
+  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    %div
+      = f.label :avatar, 'Avatar'
+    %div
+      = f.file_field :avatar, class: 'text'
+    %div
+      = f.label :nickname, 'Name'
+    %div
+      = f.text_field :nickname, class: 'text'
+    %div
+      = f.label :introdaction, 'Introdaction'
+    %div
+      = f.text_area :introdaction, class: 'text'
+    %div
+      = f.label :birthday, 'Birthday'
+    %div
+      = f.date_field :birthday, class: 'text'      
+    %div
+      = f.submit 'Submit', class: 'btn-primary'
