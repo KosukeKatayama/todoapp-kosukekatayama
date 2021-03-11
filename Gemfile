@@ -27,6 +27,7 @@ gem 'binding_of_caller'
 gem 'faker'
 gem 'hamlit'
 gem 'devise'
+gem 'aws-sdk-s3', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
