@@ -3,7 +3,7 @@
   .card_section
     %h2= @task.title
   
-    - if user_signed_in?
+    - if user_signed_in? && current_user.has_written_task?(@task)
       .dropdown
         = image_tag 'Combined Shape.png', class: 'dropbtn'
         .dropdown-content.mini
@@ -14,17 +14,17 @@
     .card_image
       = image_tag @task.eyecatch
   .card
-    = @task.content
+    .card_content-task
+      = @task.content
   
   %h2
     .comment_title
       Comment
-
   - @comments.each do |comment|
-    .comment_avatar
-      = image_tag 'Oval.png', class: 'header_avatar'
+    .comment
+      = image_tag comment.user.avatar_image, class: 'header_avatar'
       .comment_text
-        %p= comment.content
+        = comment.content
   
   = link_to new_board_task_comment_path(@board, @task) do
     .new-comment

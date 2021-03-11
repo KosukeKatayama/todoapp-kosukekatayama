@@ -1,0 +1,35 @@
+.profile{
+    display: flex;
+
+    &_edit_button {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 12px;
+        border-radius: 4px;
+        border: 1px solid;
+        font-weight: bold;
+        padding: 0px 8px;
+        width: 12%;
+        margin-bottom: 10px;
+    }
+    
+    &_display_name {
+        display: flex;
+        font-weight: bold;
+        position: relative;
+        margin-left: 5px;
+        padding: 18px 0;
+    }
+
+    &_birthday {
+        display: flex;
+        position: relative;
+        margin-left: 1px;
+        padding: 18px;
+    }
+
+    &_introdaction {
+        font-size: 12px;
+    }
+}

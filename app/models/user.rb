@@ -26,7 +26,31 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  has_one :profile, dependent: :destroy
+
+  delegate :birthday, :introdaction, to: :profile, allow_nil: true
+
+  def prepare_profile
+    profile || build_profile
+  end
+
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'face-24px.svg'
+    end
+  end
+
+  def display_name
+    profile&.nickname || self.email.split('@').first
+  end
+
   def has_written?(board)
     boards.exists?(id: board.id)
+  end
+
+  def has_written_task?(task)
+    tasks.exists?(id: task.id)
   end
 end
