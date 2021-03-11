@@ -1,26 +1,19 @@
-// @import './variables'; 
-
 .comment{
+    display: flex;
+    margin-bottom: 47px;
+
     &_title{
         font-weight: normal;
         margin-top: 50px;
     }
 
-    &_avatar{
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        display: flex;
-        margin-bottom: 47px;
-    }
-
     &_text{
+        display: flex;
         font-size: 14px;
         line-height: 19px;
-        display: flex;
         margin-inline-start: 8px;
-        position: relative;
-        padding-top: 1px;
+        padding: 5px 0;
+        overflow-wrap: break-word;
     }
   }
 
