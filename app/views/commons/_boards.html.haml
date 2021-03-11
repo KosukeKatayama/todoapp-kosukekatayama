@@ -1,17 +1,18 @@
 = link_to board_path(board) do
-  .card
-    .card_section
-      .card_section_title
-        = board.title
+  %div
+    .card
+      .card_section
+        .card_section_title
+          = board.title
       
-      .board_detail_actions
-      - if user_signed_in? && current_user.has_written?(board)
-        .dropdown
-          = image_tag 'Combined Shape.png', class: 'dropbtn'
-          .dropdown-content.mini
-            = link_to 'Edit', edit_board_path(board)
-            = link_to 'Delete', board_path(board), data: { method: 'delete' , confirm: '本当に削除してもよろしいですか？'}
-    .card_content  
-      = board.content
-    .card_detail
-      = image_tag 'Oval (1).png'
+        .board_detail_actions
+        - if user_signed_in? && current_user.has_written?(board)
+          .dropdown
+            = image_tag 'Combined Shape.png', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to 'Edit', edit_board_path(board)
+              = link_to 'Delete', board_path(board), data: { method: 'delete' , confirm: '本当に削除してもよろしいですか？'}
+      .card_content  
+        = board.content
+      .card_detail
+        = image_tag board.user.avatar_image

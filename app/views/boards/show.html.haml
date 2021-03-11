@@ -13,7 +13,7 @@
         .card_content  
           = task.content
         .card_detail
-          = image_tag 'Oval (1).png'
+          = image_tag task.user.avatar_image
 
   = link_to new_board_task_path(@board) do
     .new
